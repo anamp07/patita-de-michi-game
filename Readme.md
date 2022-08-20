@@ -1,0 +1,1 @@
+Juego hecho para la Women Game Jam 2022 por el equipo Patita de Michi.
