@@ -38,13 +38,10 @@ public class Enemy : MonoBehaviour
     {
         if (upDown)
         {
-            print(facingDirection);
             float velocityY = speed;
 
             if (facingDirection == DOWN)
                 velocityY = -speed;
-
-            print(velocityY);
 
             body2D.velocity = new Vector2(body2D.velocity.x, velocityY);
         }
@@ -71,11 +68,9 @@ public class Enemy : MonoBehaviour
             
             if (facingDirection == UP)
             {
-                print("entras?");
                 ChangeFacingDirection(DOWN);
             }else if(facingDirection == DOWN)
             {
-                print("hitted a wall down");
                 ChangeFacingDirection(UP);
             }
         }
@@ -97,7 +92,6 @@ public class Enemy : MonoBehaviour
         transform.localScale = newScale;
 
         facingDirection = newDirection;
-        print("this is the new direction " + facingDirection);
     }
 
     bool IsHittingWall()
