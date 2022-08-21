@@ -30,6 +30,7 @@ public class KeyDoor : MonoBehaviour {
 
     public void OpenDoor() {
         print("Abrida la puerta");
+        gameObject.SetActive(false);
     }
 
     public void PlayOpenFailAnim() {

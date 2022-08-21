@@ -1,13 +1,17 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     float h;
     float v;
+    bool immortal = false;
     [SerializeField] float speed = 3;
     [SerializeField] int health;
+    [SerializeField] float damageTimeout = 1;
 
     Vector3 moveDirection;
     // Start is called before the first frame update
@@ -33,7 +37,27 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
+        if (!immortal && collision.CompareTag("Enemy"))
+        {
             TakeDamage();
+            StartCoroutine(damageTimer());
+        }
+
+        if (health <= 0)
+        {
+            ResetGame();
+        }
+    }
+
+    private IEnumerator damageTimer()
+    {
+        immortal = true;
+        yield return new WaitForSeconds(damageTimeout);
+        immortal = false;
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

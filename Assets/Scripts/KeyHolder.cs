@@ -57,7 +57,11 @@ public class KeyHolder : MonoBehaviour {
         if (keyDoor != null) {
             if (ContainsKey(keyDoor.GetKeyType()) && GetKeyList().Count >= 4) {
                 // Currently holding Key to open this door
-                RemoveKey(keyDoor.GetKeyType());
+                while (GetKeyList().Count > 0)
+                {
+                    RemoveKey(keyDoor.GetKeyType());
+                }
+                print("Llaves que quedan: " + GetKeyList().Count);
                 keyDoor.OpenDoor();
             } else {
                 //keyDoor.PlayOpenFailAnim();
