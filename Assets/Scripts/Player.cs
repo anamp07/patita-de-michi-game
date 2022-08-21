@@ -1,3 +1,4 @@
+using BarthaSzabolcs.Tutorial_SpriteFlash;
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 3;
     [SerializeField] int health;
     [SerializeField] float damageTimeout = 1;
+    [SerializeField] SimpleFlash flashEffect;
 
     Vector3 moveDirection;
     // Start is called before the first frame update
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
         if (!immortal && collision.CompareTag("Enemy"))
         {
             TakeDamage();
+            flashEffect.Flash();
             StartCoroutine(damageTimer());
         }
 
