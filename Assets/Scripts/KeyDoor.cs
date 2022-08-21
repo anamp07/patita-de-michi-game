@@ -29,7 +29,7 @@ public class KeyDoor : MonoBehaviour {
     }
 
     public void OpenDoor() {
-        
+        print("Abrida la puerta");
     }
 
     public void PlayOpenFailAnim() {

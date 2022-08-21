@@ -50,17 +50,18 @@ public class KeyHolder : MonoBehaviour {
         if (key != null) {
             AddKey(key.GetKeyType());
             Destroy(key.gameObject);
-            print(GetKeyList());
+            print(GetKeyList().Count);
         }
 
         KeyDoor keyDoor = collider.GetComponent<KeyDoor>();
         if (keyDoor != null) {
-            if (ContainsKey(keyDoor.GetKeyType())) {
+            if (ContainsKey(keyDoor.GetKeyType()) && GetKeyList().Count >= 4) {
                 // Currently holding Key to open this door
                 RemoveKey(keyDoor.GetKeyType());
                 keyDoor.OpenDoor();
             } else {
-                keyDoor.PlayOpenFailAnim();
+                //keyDoor.PlayOpenFailAnim();
+                print("Faltan llaves");
             }
         }
     }
