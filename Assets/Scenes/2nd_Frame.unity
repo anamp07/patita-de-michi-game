@@ -305,8 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartPanel: {fileID: 0}
-  frames:
-  - {fileID: 984787261}
+  frame: {fileID: 984787261}
 --- !u!4 &639176476
 Transform:
   m_ObjectHideFlags: 0
@@ -332,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 984787262}
   m_Layer: 0
-  m_Name: 2ndFrame
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,7 +721,7 @@ GameObject:
   - component: {fileID: 2107948881}
   - component: {fileID: 2107948880}
   m_Layer: 0
-  m_Name: Frame
+  m_Name: Img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

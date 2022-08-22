@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1st_Frame.unity
     guid: 9a5f4717b1e8e8e40ab7ce521a112180
+  - enabled: 1
+    path: Assets/Scenes/Runner-1stMiniGame.unity
+    guid: 5e92c8dd10d56bc4196dc9cd47b68a93
+  - enabled: 1
+    path: Assets/Scenes/2nd_Frame.unity
+    guid: 0818b0631eec9e148899c1a25b86c989
+  - enabled: 1
+    path: Assets/Scenes/Laberinto.unity
+    guid: ca4f1d03ad732594d8ecaaf6914e7fa1
   m_configObjects: {}

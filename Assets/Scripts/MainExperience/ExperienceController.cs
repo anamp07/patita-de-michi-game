@@ -16,47 +16,44 @@ Intente en la escena del runner pero no logro que me de click el button D:
 public class ExperienceController : MonoBehaviour
 {
     public GameObject StartPanel;
-    public GameObject[] frames;
+    public GameObject frame;
     
     private float timer = 0f;
     
     private int lastFrame = 0;
     private int currentFrame = 0;
 
+    private string sceneName;
+
     // Start is called before the first frame update
     void Start()
     {
-        for (var i=0; i< frames.Length;i++) {
-            frames[i].SetActive(false);
-        }        
+        sceneName = SceneManager.GetActiveScene().name;                
+        frame.SetActive(false);                
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit && hit.transform.CompareTag("Start")) {
-                StartGame();
-            }                     
-        }        
+    {        
+        if (sceneName == "1st_Frame") {
+            if (Input.GetMouseButtonDown(0)) {
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit && hit.transform.CompareTag("Start")) {
+                    StartGame();
+                }                
+            }            
+        } else {
+            NextFrame();                 
+        }    
     }
 
     void StartGame() {
-        frames[currentFrame].SetActive(true);
+        frame.SetActive(true);
         StartPanel.SetActive(false);
     }
 
     void NextFrame() {
-        currentFrame++;
-
-        if (currentFrame < frames.Length)
-        {
-            // Show next instruction
-            frames[lastFrame].SetActive(false);
-            frames[currentFrame].SetActive(true);
-            lastFrame++;
-        }
+        frame.SetActive(true);
     }
    
 }
