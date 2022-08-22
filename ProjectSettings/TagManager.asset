@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - puzzle
+  - Border
+  - Start
+  - MiniGame
+  - Close
   layers:
   - Default
   - TransparentFX
@@ -40,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: pieces
+    uniqueID: 1726316023
     locked: 0
