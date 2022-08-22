@@ -27,6 +27,13 @@ public class GameController : MonoBehaviour
         if(obstacleCount>3 && score>0) {
             score--;
             obstacleCount=0;
-        }                
+        }        
+        
+        if (Input.GetMouseButtonDown(0)) {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (hit && hit.transform.CompareTag("Close")) {
+                SceneManager.LoadScene("2nd_Frame");
+            }
+        }        
     }
 }
